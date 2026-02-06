@@ -13,100 +13,112 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #ffecd2 100%);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            margin: 0;
-            padding: 0;
         }
 
         .container {
-            text-align: center;
+            width: 80%;
+            height: 80vh;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
             position: relative;
-            z-index: 1;
         }
 
         h1 {
-            color: #ff1493;
-            font-size: 2.5em;
+            color: #ff1744;
+            font-size: 3em;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
-            background: white;
-            padding: 20px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .cat-container {
-            margin: 30px auto;
+            position: relative;
             width: 200px;
             height: 200px;
-            position: relative;
         }
 
-        .cat-face {
-            width: 200px;
-            height: 180px;
-            background: #ff69b4;
+        .cat {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cat-head {
+            width: 150px;
+            height: 130px;
+            background: #ff9999;
             border-radius: 50% 50% 45% 45%;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .ear {
-            width: 60px;
-            height: 80px;
-            background: #ff69b4;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 50px solid #ff9999;
             position: absolute;
-            top: -30px;
         }
 
-        .ear-left {
-            left: 20px;
-            border-radius: 80% 20% 20% 20%;
+        .ear.left {
+            top: -25px;
+            left: 15px;
             transform: rotate(-20deg);
         }
 
-        .ear-right {
-            right: 20px;
-            border-radius: 20% 80% 20% 20%;
+        .ear.right {
+            top: -25px;
+            right: 15px;
             transform: rotate(20deg);
         }
 
         .ear-inner {
-            width: 30px;
-            height: 40px;
-            background: #ffb6c1;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid #ffb3b3;
             position: absolute;
             top: 10px;
-            left: 15px;
-            border-radius: 50%;
-        }
-
-        .eyes-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 60px;
+            left: -15px;
         }
 
         .eye {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 35px;
             background: white;
             border-radius: 50%;
-            position: relative;
-            border: 3px solid #333;
+            position: absolute;
+            top: 50px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .eye.left {
+            left: 30px;
+        }
+
+        .eye.right {
+            right: 30px;
         }
 
         .pupil {
-            width: 20px;
-            height: 20px;
-            background: #333;
+            width: 12px;
+            height: 12px;
+            background: #000;
             border-radius: 50%;
             position: absolute;
             top: 50%;
@@ -116,91 +128,151 @@
         }
 
         .nose {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 15px solid #ff1493;
+            width: 15px;
+            height: 12px;
+            background: #ff6b6b;
+            border-radius: 0 0 50% 50%;
             position: absolute;
-            bottom: 50px;
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
         }
 
         .mouth {
-            width: 60px;
-            height: 30px;
-            border: 3px solid #333;
+            width: 40px;
+            height: 20px;
+            border: 3px solid #ff6b6b;
             border-top: none;
-            border-radius: 0 0 60px 60px;
+            border-radius: 0 0 50% 50%;
             position: absolute;
-            bottom: 30px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        .question {
-            font-size: 1.8em;
-            color: #333;
-            margin: 30px 0;
-            font-weight: bold;
-            background: white;
-            padding: 20px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .whisker {
+            width: 50px;
+            height: 2px;
+            background: #666;
+            position: absolute;
+            top: 60px;
         }
 
-        .buttons {
+        .whisker.left-1 {
+            left: -45px;
+            transform: rotate(-10deg);
+        }
+
+        .whisker.left-2 {
+            left: -45px;
+            top: 70px;
+        }
+
+        .whisker.left-3 {
+            left: -45px;
+            top: 80px;
+            transform: rotate(10deg);
+        }
+
+        .whisker.right-1 {
+            right: -45px;
+            transform: rotate(10deg);
+        }
+
+        .whisker.right-2 {
+            right: -45px;
+            top: 70px;
+        }
+
+        .whisker.right-3 {
+            right: -45px;
+            top: 80px;
+            transform: rotate(-10deg);
+        }
+
+        .buttons-container {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 40px;
             margin-top: 30px;
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            pointer-events: none;
+            position: relative;
+            width: 100%;
+            height: 80px;
+            justify-content: center;
         }
 
         button {
-            padding: 15px 40px;
-            font-size: 1.2em;
+            padding: 20px 50px;
+            font-size: 1.5em;
             border: none;
-            border-radius: 50px;
+            border-radius: 15px;
             cursor: pointer;
             font-weight: bold;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            pointer-events: auto;
+            position: relative;
         }
 
         #yesBtn {
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            background: #4caf50;
             color: white;
-            position: fixed;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
         }
 
         #yesBtn:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
         }
 
         #noBtn {
-            background: linear-gradient(135deg, #ddd, #bbb);
-            color: #666;
+            background: #f44336;
+            color: white;
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+            animation: shake 0.5s infinite;
             position: absolute;
-            transition: none;
         }
 
-        .hearts {
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px) rotate(-2deg); }
+            75% { transform: translateX(5px) rotate(2deg); }
+        }
+
+        .celebration {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .celebration.active {
+            display: flex;
+        }
+
+        .celebration h2 {
+            font-size: 4em;
+            color: #ff1744;
+            margin-bottom: 30px;
+            animation: bounce 1s infinite;
+        }
+
+        .celebration img {
+            width: 400px;
+            border-radius: 20px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hearts {
+            position: absolute;
             width: 100%;
             height: 100%;
             pointer-events: none;
@@ -210,7 +282,7 @@
         .heart {
             position: absolute;
             font-size: 2em;
-            animation: float 4s ease-in infinite;
+            animation: float 4s infinite;
             opacity: 0;
         }
 
@@ -224,183 +296,199 @@
                 opacity: 0;
             }
         }
-
-        .celebration {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 1000;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .celebration.active {
-            display: flex;
-        }
-
-        .celebration-gif {
-            width: 500px;
-            height: 500px;
-            max-width: 80vw;
-            max-height: 60vh;
-            object-fit: contain;
-            margin-bottom: 30px;
-            border-radius: 20px;
-        }
-
-        .celebration-text {
-            font-size: 3em;
-            color: #ff1493;
-            animation: pulse 1s ease-in-out infinite;
-            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.5);
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
     </style>
 </head>
 <body>
-    <div class="hearts" id="hearts"></div>
-    
     <div class="container">
-        <h1>💕 Valentine's Day 💕</h1>
+        <div class="hearts" id="hearts"></div>
+        
+        <h1>My gorgeous queen, will you be my Valentine? 💕</h1>
         
         <div class="cat-container">
-            <div class="cat-face">
-                <div class="ear ear-left">
-                    <div class="ear-inner"></div>
-                </div>
-                <div class="ear ear-right">
-                    <div class="ear-inner"></div>
-                </div>
-                
-                <div class="eyes-container">
-                    <div class="eye">
+            <div class="cat">
+                <div class="cat-head">
+                    <div class="ear left">
+                        <div class="ear-inner"></div>
+                    </div>
+                    <div class="ear right">
+                        <div class="ear-inner"></div>
+                    </div>
+                    
+                    <div class="eye left">
                         <div class="pupil" id="leftPupil"></div>
                     </div>
-                    <div class="eye">
+                    <div class="eye right">
                         <div class="pupil" id="rightPupil"></div>
                     </div>
+                    
+                    <div class="nose"></div>
+                    <div class="mouth"></div>
+                    
+                    <div class="whisker left-1"></div>
+                    <div class="whisker left-2"></div>
+                    <div class="whisker left-3"></div>
+                    <div class="whisker right-1"></div>
+                    <div class="whisker right-2"></div>
+                    <div class="whisker right-3"></div>
                 </div>
-                
-                <div class="nose"></div>
-                <div class="mouth"></div>
             </div>
         </div>
-
-        <p class="question">Will you be my Valentine? 🌹</p>
-
-        <div class="buttons">
+        
+        <div class="buttons-container" id="buttonsContainer">
             <button id="yesBtn">Yes! 💖</button>
             <button id="noBtn">No</button>
         </div>
+    </div>
 
-        <div class="celebration" id="celebration">
-            <img src="https://media.giphy.com/media/g5R9dok94mrIvplmZd/giphy.gif" alt="Celebration" class="celebration-gif">
-            <div class="celebration-text">🎉 Yay! I love you! 🎉</div>
-        </div>
+    <div class="celebration" id="celebration">
+        <h2>Yaayyy, I love you so much! 💕✨</h2>
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzliYzd2aG4zbTYwaXRoamx1NWQzdGIwNGpqMzJvejloOXkyNmY2YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Xw6yFn7frR3Y4/giphy.gif" alt="Celebration">
     </div>
 
     <script>
-        const noBtn = document.getElementById('noBtn');
-        const yesBtn = document.getElementById('yesBtn');
+        // Eye tracking
         const leftPupil = document.getElementById('leftPupil');
         const rightPupil = document.getElementById('rightPupil');
-        const celebration = document.getElementById('celebration');
-        const heartsContainer = document.getElementById('hearts');
-
-        // Track mouse position
-        let mouseX = 0;
-        let mouseY = 0;
+        const leftEye = document.querySelector('.eye.left');
+        const rightEye = document.querySelector('.eye.right');
 
         document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
 
-            // Move pupils to follow the No button
+            // Left eye
+            const leftRect = leftEye.getBoundingClientRect();
+            const leftEyeX = leftRect.left + leftRect.width / 2;
+            const leftEyeY = leftRect.top + leftRect.height / 2;
+            
+            const leftAngle = Math.atan2(mouseY - leftEyeY, mouseX - leftEyeX);
+            const leftDistance = Math.min(8, Math.hypot(mouseX - leftEyeX, mouseY - leftEyeY) / 30);
+            
+            const leftPupilX = Math.cos(leftAngle) * leftDistance;
+            const leftPupilY = Math.sin(leftAngle) * leftDistance;
+            
+            leftPupil.style.transform = `translate(calc(-50% + ${leftPupilX}px), calc(-50% + ${leftPupilY}px))`;
+
+            // Right eye
+            const rightRect = rightEye.getBoundingClientRect();
+            const rightEyeX = rightRect.left + rightRect.width / 2;
+            const rightEyeY = rightRect.top + rightRect.height / 2;
+            
+            const rightAngle = Math.atan2(mouseY - rightEyeY, mouseX - rightEyeX);
+            const rightDistance = Math.min(8, Math.hypot(mouseX - rightEyeX, mouseY - rightEyeY) / 30);
+            
+            const rightPupilX = Math.cos(rightAngle) * rightDistance;
+            const rightPupilY = Math.sin(rightAngle) * rightDistance;
+            
+            rightPupil.style.transform = `translate(calc(-50% + ${rightPupilX}px), calc(-50% + ${rightPupilY}px))`;
+        });
+
+        // Button interactions
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const container = document.querySelector('.container');
+        const buttonsContainer = document.getElementById('buttonsContainer');
+
+        // Set initial position for No button
+        noBtn.style.left = '60%';
+        noBtn.style.top = '50%';
+        noBtn.style.transform = 'translate(-50%, -50%)';
+
+        let isNoBtnMoving = false;
+
+        function moveNoButton(mouseX, mouseY) {
+            if (isNoBtnMoving) return;
+            
             const noRect = noBtn.getBoundingClientRect();
+            const yesRect = yesBtn.getBoundingClientRect();
+            const containerRect = buttonsContainer.getBoundingClientRect();
+            
             const noCenterX = noRect.left + noRect.width / 2;
             const noCenterY = noRect.top + noRect.height / 2;
-
-            movePupils(noCenterX, noCenterY);
-
-            // Check if mouse is near No button
+            
             const distance = Math.hypot(mouseX - noCenterX, mouseY - noCenterY);
             
-            if (distance < 100) {
-                moveNoButton();
+            // Escape zone - only moves when cursor is very close
+            if (distance < 50) {
+                isNoBtnMoving = true;
+                
+                let newX, newY;
+                let attempts = 0;
+                const maxAttempts = 50;
+                
+                do {
+                    // Random position within container
+                    newX = Math.random() * (containerRect.width - noRect.width);
+                    newY = Math.random() * (containerRect.height - noRect.height);
+                    
+                    // Calculate absolute positions for collision check
+                    const noLeft = containerRect.left + newX;
+                    const noRight = noLeft + noRect.width;
+                    const noTop = containerRect.top + newY;
+                    const noBottom = noTop + noRect.height;
+                    
+                    const yesLeft = yesRect.left;
+                    const yesRight = yesRect.right;
+                    const yesTop = yesRect.top;
+                    const yesBottom = yesRect.bottom;
+                    
+                    // Check for overlap with padding
+                    const padding = 20;
+                    const noOverlap = !(
+                        noLeft < yesRight + padding &&
+                        noRight > yesLeft - padding &&
+                        noTop < yesBottom + padding &&
+                        noBottom > yesTop - padding
+                    );
+                    
+                    // Check distance from mouse
+                    const newCenterX = containerRect.left + newX + noRect.width / 2;
+                    const newCenterY = containerRect.top + newY + noRect.height / 2;
+                    const distanceFromMouse = Math.hypot(mouseX - newCenterX, mouseY - newCenterY);
+                    
+                    if (noOverlap && distanceFromMouse > 80) {
+                        break;
+                    }
+                    
+                    attempts++;
+                } while (attempts < maxAttempts);
+                
+                noBtn.style.left = newX + 'px';
+                noBtn.style.top = newY + 'px';
+                noBtn.style.transform = 'none';
+                
+                setTimeout(() => {
+                    isNoBtnMoving = false;
+                }, 300);
             }
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            moveNoButton(e.clientX, e.clientY);
         });
 
-        function movePupils(targetX, targetY) {
-            const pupils = [leftPupil, rightPupil];
-            
-            pupils.forEach(pupil => {
-                const eye = pupil.parentElement;
-                const eyeRect = eye.getBoundingClientRect();
-                const eyeCenterX = eyeRect.left + eyeRect.width / 2;
-                const eyeCenterY = eyeRect.top + eyeRect.height / 2;
-
-                const angle = Math.atan2(targetY - eyeCenterY, targetX - eyeCenterX);
-                const distance = Math.min(12, Math.hypot(targetX - eyeCenterX, targetY - eyeCenterY) / 20);
-
-                const pupilX = Math.cos(angle) * distance;
-                const pupilY = Math.sin(angle) * distance;
-
-                pupil.style.transform = `translate(calc(-50% + ${pupilX}px), calc(-50% + ${pupilY}px))`;
-            });
-        }
-
-        function moveNoButton() {
-            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
-
-            let newX, newY;
-            do {
-                newX = Math.random() * maxX;
-                newY = Math.random() * maxY;
-            } while (
-                // Avoid placing near the Yes button
-                Math.abs(newY - (window.innerHeight - 100)) < 100 &&
-                Math.abs(newX - (window.innerWidth / 2 - noBtn.offsetWidth / 2)) < 150
-            );
-
-            noBtn.style.left = newX + 'px';
-            noBtn.style.top = newY + 'px';
-        }
-
-        // Initialize No button position (top right area)
-        noBtn.style.left = (window.innerWidth - 200) + 'px';
-        noBtn.style.top = '100px';
-
+        // Yes button click
         yesBtn.addEventListener('click', () => {
-            celebration.classList.add('active');
-            noBtn.style.display = 'none';
-            yesBtn.style.display = 'none';
-            
-            // Create floating hearts
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => createHeart(), i * 100);
-            }
+            document.getElementById('celebration').classList.add('active');
+            createHearts();
         });
 
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.textContent = '❤️';
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            heart.style.fontSize = (Math.random() * 1.5 + 1) + 'em';
-            heartsContainer.appendChild(heart);
-
-            setTimeout(() => heart.remove(), 5000);
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = '💕';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    heart.style.fontSize = (Math.random() * 2 + 1) + 'em';
+                    heartsContainer.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 4000);
+                }, i * 100);
+            }
         }
     </script>
 </body>
